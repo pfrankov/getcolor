@@ -282,7 +282,7 @@ function backgroundColorChange(color) {
 
 	}
 
-	scriptAdd("/js/main.js");
+	scriptAdd("js/main.js");
 	scriptAdd("http://www.google-analytics.com/ga.js");
 
 	imageLoad("images/farbtastic/marker.png");

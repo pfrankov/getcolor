@@ -14,19 +14,6 @@
     "build": "rimraf dist && npm run copy-public && npm run pre && npm run post && npm run uglify-main && npm run uglify-start",
     "deploy": "deploy-to-git"
   },
-  "config": {
-    "deployToGit": {
-      "repository": "git@github.com:pfrankov/getcolor.git",
-      "branch": "gh-pages",
-      "folder": "dist",
-      "script": "npm run build",
-      "commit": "GH Pages Update",
-      "user": {
-        "email": "pavel@frankov.ru",
-        "name": "Pavel Frankov"
-      }
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pfrankov/getcolor.git"
@@ -46,7 +33,6 @@
     "copyfiles": "^1.2.0",
     "cpx": "^1.5.0",
     "cssnano": "^3.10.0",
-    "deploy-to-git": "^0.1.5",
     "http-server": "^0.9.0",
     "lite-server": "^2.3.0",
     "node-sass": "^4.5.3",

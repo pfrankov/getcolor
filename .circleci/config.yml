@@ -1,0 +1,20 @@
+version: 2
+general:
+  branches:
+    ignore:
+      - gh-pages
+
+test:
+  override:
+    - exit 0
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build
+      - deploy:
+          name: GH Pages
+          command: ./scripts/deploy-ghpages.sh dist
