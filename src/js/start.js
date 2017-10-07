@@ -78,7 +78,7 @@ function setMainColor() {
 			}
 		}
 	} else {
-		var pathname = window.location.pathname;
+		var pathname = window.location.pathname || window.location.hash;
 		var expression = /([a-f\d]{6})$/i.exec(pathname);
 
 		if (expression && expression[1]) {
@@ -283,7 +283,7 @@ function backgroundColorChange(color) {
 	}
 
 	scriptAdd("js/main.js");
-	scriptAdd("http://www.google-analytics.com/ga.js");
+	scriptAdd("https://www.google-analytics.com/ga.js");
 
 	imageLoad("images/farbtastic/marker.png");
 	imageLoad("images/farbtastic/mask.png");

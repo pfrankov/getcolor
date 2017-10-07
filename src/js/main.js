@@ -263,6 +263,7 @@ function convertData(wikiColors) {
 
 
 $(function () {
+	var DOMAIN = location.origin + "/";
 
 	VK.init({apiId: 1961711, onlyWidgets: true});
 
@@ -356,15 +357,16 @@ $(function () {
 		});
 		$color.data("currentColor", color);
 
-		var colorString = color.substring(1, color.length);
+		var colorString = color;
 
-		$linkInput.val("http://getcolor.ru/" + colorString.toUpperCase());
+		$linkInput.val(DOMAIN + colorString.toUpperCase());
 		$linkLink.attr("href", $linkInput.val());
 
 		$colorInput.val(color.toUpperCase());
 		$currentColor.html(color.toUpperCase());
 
 		document.title = color.toUpperCase();
+		location.replace(color.toUpperCase());
 		drawFavicon(color);
 
 
@@ -417,8 +419,7 @@ $(function () {
 				vk_title_string = "Мне нравится " + vk_color + " цвет";
 			}
 
-			var getColorURL = "http://getcolor.ru/";
-			var url = getColorURL + colorString.toUpperCase();
+			var url = DOMAIN + colorString.toUpperCase();
 
 			$("#vk_like").children().remove();
 			VK.Widgets.Like('vk_like', {

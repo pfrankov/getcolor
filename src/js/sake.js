@@ -222,7 +222,7 @@ jQuery.fn.sake = function (options, callback) {
 					.hover(function () {
 						$listItem.addClass("active").siblings(".active").removeClass("active");
 
-						options.select.call($input, $this);
+						options.select.call($input, this);
 					}, function () {
 						$listItem.siblings(".active").andSelf().removeClass("active");
 					})
