@@ -1,27 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
-	<!--
-	<?php
-		$color = "000000";
-		if ( !empty($_REQUEST["color"]) && strlen($_REQUEST["color"]) == 6 ) {
-			$color = $_REQUEST["color"];
-		}
-		$color = "#".strtoupper($color);
-		$colorString = "<span id=\"current-color\">{$color}</span>";
-
-		$phrases = array(
-			"{$colorString} — тот самый цвет",
-			"{$colorString} вам к лицу",
-			"{$colorString} — ваш цвет",
-			"Это определённо {$colorString}"
-		);
-
-		$phrase = $phrases[array_rand($phrases)];
-
-
-	?>-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="online color picker выбор цвета"/>
 		<meta name="description" content="getColor поможет выбрать цвет"/>
@@ -32,11 +11,6 @@
 
 		<link href="./css/main.css" rel="stylesheet" type="text/css"/>
 	</head>
-	<style type="text/css">
-		#colorize #color {
-			background:<?php echo $color; ?>;
-		}
-	</style>
 	<body>
 		<div id="color-finder">
 			<h2>
@@ -104,7 +78,7 @@
 
 
 		<script type="text/javascript" src="./js/start.js"></script>
-		<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?13"></script>
+		<script type="text/javascript" src="https://userapi.com/js/api/openapi.js?13"></script>
 
 	</body>
 	<script type="text/javascript">
