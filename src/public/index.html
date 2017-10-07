@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<!--
+	<?php
+		$color = "000000";
+		if ( !empty($_REQUEST["color"]) && strlen($_REQUEST["color"]) == 6 ) {
+			$color = $_REQUEST["color"];
+		}
+		$color = "#".strtoupper($color);
+		$colorString = "<span id=\"current-color\">{$color}</span>";
+
+		$phrases = array(
+			"{$colorString} — тот самый цвет",
+			"{$colorString} вам к лицу",
+			"{$colorString} — ваш цвет",
+			"Это определённо {$colorString}"
+		);
+
+		$phrase = $phrases[array_rand($phrases)];
+
+
+	?>-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="online color picker выбор цвета"/>
+		<meta name="description" content="getColor поможет выбрать цвет"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<link rel="shortcut icon" type="image/png" href="./favicon.ico" />
+		<title>getColor — online color picker</title>
+
+		<link href="./css/main.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<style type="text/css">
+		#colorize #color {
+			background:<?php echo $color; ?>;
+		}
+	</style>
+	<body>
+		<div id="color-finder">
+			<h2>
+				<a class="ajax"><i class="icon search">Поиск цвета</i> по названию</a>
+			</h2>
+			<div id="color-finder-input">
+				<input type="text" placeholder="Введите название цвета" />
+			</div>
+		</div>
+		<div id="colorize">
+			<div id="color"></div>
+			<h1><?php echo $phrase; ?></h1>
+			<h2></h2>
+			<div id="main-colorpicker">
+				<div class="mainColor">
+					<input type="text" class="mainColorInput colorInput" />
+					<div class="mainColorPicker colorpicker"></div>
+				</div>
+				<div id="link">
+					<h3><a href="#">Ссылка на цвет</a></h3>
+					<input class="colorInput" type="text"/>
+				</div>
+				<div id="i-like-it">
+					<div id="vk_like"></div>
+					<div id="plus">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<ul id="background-color-change">
+			<li class="colorpicker">
+				<span>#ffffff</span>
+				<strong><i class="icon colorChange"></i>Выбрать цвет</strong>
+			</li>
+			<li class="colorpicker">
+				<span>#bbbbbb</span>
+				<strong><i class="icon colorChange"></i>Выбрать цвет</strong>
+			</li>
+			<li class="colorpicker">
+				<span>#888888</span>
+				<strong><i class="icon colorChange"></i>Выбрать цвет</strong>
+			</li>
+			<li class="colorpicker">
+				<span>#444444</span>
+				<strong><i class="icon colorChange"></i>Выбрать цвет</strong>
+			</li>
+			<li class="colorpicker">
+				<span>#000000</span>
+				<strong><i class="icon colorChange"></i>Выбрать цвет</strong>
+			</li>
+		</ul>
+		<div class="vcard">
+			<div id="logo">getColor — color picker</div>
+
+			<a class="fn org url hide" href="http://getcolor.ru">getColor</a>
+			<a class="icon twitter" href="http://twitter.com/getcolor_ru" title="Follow me!">Follow me!</a>
+			<div class="note">
+				<h3 class="hide">
+					getColor — лёгкий и удобный online color picker, позволяющий выбрать цвет и обмениваться полученными цветами. Ничего более.
+				</h3>
+				Сделано с любовью<span class="hide">.</span> <a class="icon pf" href="http://twitter.com/twenty/">Павел Франков</a>
+			</div>
+		</div>
+
+
+		<script type="text/javascript" src="./js/start.js"></script>
+		<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?13"></script>
+
+	</body>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-18123963-1']);
+		_gaq.push(['_trackPageview']);
+
+		window.___gcfg = {lang: 'ru'};
+
+		(function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
+
+	</script>
+</html>

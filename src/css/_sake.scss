@@ -1,0 +1,28 @@
+ul.sake {
+	list-style: none;
+	position: absolute;
+	margin: 6px 0 0;
+	z-index: 10;
+	padding: 0 8px;
+	text-align: center;
+	left: 0;
+	top: 37px;
+
+	li.sake {
+		cursor: pointer;
+		line-height: 1.2em;
+		margin: 0 6px 6px 0;
+
+		display: inline-block;
+
+		border-radius: 10px;
+
+		&.active {
+			//background:#90e6ff;
+		}
+		b {
+			font-size: 1.5em;
+			font-weight: normal;
+		}
+	}
+}

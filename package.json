@@ -1,0 +1,59 @@
+{
+  "name": "getcolor",
+  "version": "1.0.0",
+  "description": "Tooltips that works on touch-based devices",
+  "scripts": {
+    "uglify-main": "mkdir -p dist/js/ && uglifyjs src/vendor/js/jquery-1.9.1.min.js src/vendor/js/farbtastic.js src/js/main.js src/js/sake.js --compress --mangle -o dist/js/main.js",
+    "uglify-start": "mkdir -p dist/js/ && uglifyjs src/js/start.js --compress --mangle -o dist/js/start.js",
+    "copy-public": "cpx \"src/public/**\" dist/",
+    "post": "postcss -c postcss.config.js -o dist/css/main.css src/css/*.css",
+    "pre": "node-sass src/css/ --output src/css",
+    "watch": "npm run pre -- --watch",
+    "preview": "lite-server --baseDir=\"./dist/\" --open",
+    "server": "concurrently \"npm run preview\" \"npm run watch\"",
+    "build": "rimraf dist && npm run copy-public && npm run pre && npm run post && npm run uglify-main && npm run uglify-start",
+    "deploy": "deploy-to-git"
+  },
+  "config": {
+    "deployToGit": {
+      "repository": "git@github.com:pfrankov/getcolor.git",
+      "branch": "gh-pages",
+      "folder": "dist",
+      "script": "npm run build",
+      "commit": "GH Pages Update",
+      "user": {
+        "email": "pavel@frankov.ru",
+        "name": "Pavel Frankov"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfrankov/getcolor.git"
+  },
+  "author": {
+    "name": "Pavel Frankov",
+    "email": "pavel@frankov.ru"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pfrankov/getcolor/issues"
+  },
+  "homepage": "https://github.com/pfrankov/getcolor",
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "concurrently": "^3.4.0",
+    "copyfiles": "^1.2.0",
+    "cpx": "^1.5.0",
+    "cssnano": "^3.10.0",
+    "deploy-to-git": "^0.1.5",
+    "http-server": "^0.9.0",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.5.3",
+    "postcss-cli": "^3.0.0",
+    "postcss-csso": "^2.0.0",
+    "postcss-cssstats": "^1.0.0",
+    "rimraf": "^2.6.2",
+    "uglify-js": "^3.1.3"
+  }
+}
