@@ -341,9 +341,18 @@ $(function () {
 	var $linkLink = $mainColor.find("#link a");
 	var $currentColor = $("#current-color");
 	var $additionalInfo = $("#colorize h2");
-	var $bgColors = $("#background-color-change li");
 
-	var $searchInput = $("#color-finder-input input");
+	$color.click(function () {
+		if ($mainColor.is(":visible")) {
+			$mainColor.fadeOut(700);
+		} else {
+			$mainColor.fadeIn(700);
+		}
+	});
+
+	if (!window.location.hash && window.location.pathname.length < 2) {
+		$color.click();
+	}
 
 	// create
 	var farbtastic = $.farbtastic($mainColorPicker, function (color) {
@@ -472,15 +481,6 @@ $(function () {
 		farbtastic.setColor(window.mainColor);
 	});
 
-	//
-	$color.click(function () {
-		if ($mainColor.is(":visible")) {
-			$mainColor.fadeOut(700);
-		} else {
-			$mainColor.fadeIn(700);
-		}
-	});
-
 	// Background color changer
 	var $backgroundColor = $("<div/>").addClass("backgroundColor").appendTo($body);
 	var $backgroundColorInput = $("<input/>").attr({
@@ -529,10 +529,6 @@ $(function () {
 	$(".colorInput").bind("change keyup", function () {
 		$.farbtastic($(this).siblings(".colorpicker")).setColor(this.value);
 	});
-
-	if (!window.location.hash && window.location.pathname.length < 2) {
-		$color.click();
-	}
 
 
 	var $colorFinder = $("#color-finder").addClass("visible"),
