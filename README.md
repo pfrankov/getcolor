@@ -1,8 +1,6 @@
 # getColor
 Colors exchanging SPA right from 2010.
 
-http://getcolor.ru
-
 Pull requests welcome!
 
 If you want to help but have no idea where to start — just check the ToDo below.
